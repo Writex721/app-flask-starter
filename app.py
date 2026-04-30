@@ -21,7 +21,7 @@ def pozdrav_post():
 	name = request.form.get("name")
 	surname = request.form.get("surname")
 
-	return render_template("page.html", date=date, name=name, surname=surname)
+	return render_template("pozdrav_post.html", date=date, name=name, surname=surname)
 
 if __name__=="__main__":
 	app.run(debug=True)
