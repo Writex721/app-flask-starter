@@ -16,6 +16,11 @@
 
 	{% endif %}
 
+	{% if zprava_jmeno %}
+		<p>{{ zprava_jmeno }}</p><hr>
+
+	{% endif %}
+
 	Řekni mi své jméno a já tě pozdravím!
 	<form method="POST">
 		<input type="text" name="name" placeholder="Zadej své jméno">
