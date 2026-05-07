@@ -16,8 +16,8 @@ def index():
 @app.route("/pozdrav-post", methods=["POST", "GET"])
 def pozdrav_post():
 	check=True
-	zprava_jmeno="jmeno splňuje požadavky"
-	zprava="Uhodl jsi heslo!"
+	zprava_jmeno=" "
+	zprava=" "
 	#aktuální datum
 	date = datetime.now().strftime("%d. %m. %Y")
 
@@ -35,12 +35,13 @@ def pozdrav_post():
 		check=False
 
 
-	
-	if password == "tajneheslo" and check==True:
-		zprava="Uhodl jsi heslo!"
+	if check:
+		if password == "tajneheslo" and check==True:
+			zprava="Uhodl jsi heslo!"
+			zprava_jmeno="Jméno bylo zadáno správně"
 
-	else:
-		zprava="Error - špatné heslo"
+		else:
+			zprava="Error - špatné heslo"
 		
 
 	return render_template("pozdrav_post.html", date=date, name=name, surname=surname, zprava=zprava, zprava_jmeno=zprava_jmeno)
